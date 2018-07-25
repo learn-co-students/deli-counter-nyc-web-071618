@@ -5,7 +5,7 @@ katz_deli = ["Ava", "Spencer"]
 def line(katz_deli)
 
   # katz_deli = []
-  line_list = ""
+  line_array = []
   counter = 0
   name_and_index = []
 
@@ -18,15 +18,17 @@ def line(katz_deli)
     name_and_index << " #{index + 1}. #{person}"
   end
 
-  line_list = "The line is currently:"
+
+
+  print "The line is currently:"
   while counter < name_and_index.length do
-    # binding.pry
-    line_list = line_list + name_and_index[counter]
+    binding.pry
+    print name_and_index[counter]
     counter += 1
   end
 
-  puts line_list
-  return katz_deli
+  # puts ""
+
 end
 
 def take_a_number(katz_deli, person)
@@ -35,27 +37,19 @@ def take_a_number(katz_deli, person)
   incoming = katz_deli.last
   puts "Welcome, #{incoming}. You are number #{katz_deli.length} in line."
 
+
+  # katz_deli.each_with_index do |person, index|
+  #   puts "Welcome, #{person}. You are number #{index + 1} in line."
+  # end
+
   return katz_deli
 
 end
 
-def now_serving(katz_deli)
-
-  if katz_deli.length == 0
-    puts "There is nobody waiting to be served!"
-    return katz_deli
-  end
-  puts "Currently serving #{katz_deli.shift}."
-  # return katz_deli
-
-end
 # take_a_number(katz_deli, "Ada")
 # take_a_number(katz_deli, "Grace")
 # take_a_number(katz_deli, "Julia")
 # katz_deli = line("Sam")
 # katz_deli = line(katz_deli, "Julia")
 #
-# line(katz_deli)
-# now_serving(katz_deli)
-# line(katz_deli)
-# now_serving(katz_deli)
+line(katz_deli)
